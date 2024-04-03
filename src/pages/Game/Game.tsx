@@ -21,8 +21,8 @@ export const Game: FC<IGameProps> = ({ totalHearts, totalMinutes, onFinishGame }
 
   const [currentFieldElement, setCurrentFieldElement] = useState<ICurrentFieldElement | null>(null);
 
-  const maxInterval: number = 850;
-  const minInterval: number = 600;
+  const maxInterval: number = 750;
+  const minInterval: number = 500;
 
   const [time, setTime] = useState<number>(totalMinutes * 60);
 
@@ -73,7 +73,7 @@ export const Game: FC<IGameProps> = ({ totalHearts, totalMinutes, onFinishGame }
     elementAppearanceTimeout = setTimeout(() => {
       setCurrentFieldElement(getRandomElement());
       startDisappearanceTimeout();
-    }, Math.floor(Math.random() * (800 - 500 + 1)) + 500);
+    }, Math.floor(Math.random() * (800 - 300 + 1)) + 300);
   };
 
   const startDisappearanceTimeout = () => {
