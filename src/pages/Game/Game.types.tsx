@@ -11,6 +11,7 @@ import heartSound from "assets/sounds/heartSound.mp3";
 
 export interface IGameProps {
   totalHearts: number
+  totalMinutes: number
   onFinishGame: (success: boolean) => void
 }
 

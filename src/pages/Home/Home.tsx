@@ -9,6 +9,7 @@ export const Home: FC = () => {
   const [gameStatus, setIsGameStatus] = useState<IGameStatus>({ finished: false, success: false });
   const titleText = isGameStarted && gameStatus.finished && !gameStatus.success ? 'Вы проиграли' : 'Добро пожаловать'
   const btnText = isGameStarted && gameStatus.finished && !gameStatus.success ? 'Попробовать снова' : 'Начать игру'
+  const totalMinutes = 2
 
   const birthDate = new Date("2002-04-03");
   const currentDate = new Date();
@@ -32,7 +33,7 @@ export const Home: FC = () => {
   };
 
   if (isGameStarted && !gameStatus.finished) {
-    return <Game totalHearts={totalHearts} onFinishGame={onFinishGame} />
+    return <Game totalHearts={totalHearts} totalMinutes={totalMinutes} onFinishGame={onFinishGame} />
   }
 
   if (isGameStarted && gameStatus.finished && gameStatus.success) {
@@ -53,7 +54,7 @@ export const Home: FC = () => {
     <HomeWrapper spacing={3}>
       <HomeTitle>{titleText}</HomeTitle>
 
-      <HomeDescription>Чтобы получить поздравление, нужно набрать {totalHearts} сердечка за 1 минуту</HomeDescription>
+      <HomeDescription>Чтобы получить поздравление, нужно набрать {totalHearts} сердечка за {totalMinutes} минуты</HomeDescription>
 
       <Button variant="contained" color="error" onClick={onStartGame}>
         {btnText}

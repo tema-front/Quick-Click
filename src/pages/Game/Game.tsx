@@ -14,7 +14,7 @@ import {
 } from "./Game.types";
 import failSound from "assets/sounds/failSound.mp3";
 
-export const Game: FC<IGameProps> = ({ totalHearts, onFinishGame }) => {
+export const Game: FC<IGameProps> = ({ totalHearts, totalMinutes, onFinishGame }) => {
   const [heartCount, setHeartCount] = useState<number>(0);
   const [isGameStarted, setIsGameStarted] = useState<boolean>(false);
   const [isGameFinished, setIsGameFinished] = useState<boolean>(false);
@@ -24,7 +24,7 @@ export const Game: FC<IGameProps> = ({ totalHearts, onFinishGame }) => {
   const maxInterval: number = 850;
   const minInterval: number = 600;
 
-  const [time, setTime] = useState<number>(60);
+  const [time, setTime] = useState<number>(totalMinutes * 60);
 
   let timeInterval: any = null;
   let elementAppearanceTimeout: any = null;
