@@ -21,8 +21,8 @@ export const Game: FC<IGameProps> = ({ totalHearts, onFinishGame }) => {
 
   const [currentFieldElement, setCurrentFieldElement] = useState<ICurrentFieldElement | null>(null);
 
-  const maxInterval: number = 600;
-  const minInterval: number = 400;
+  const maxInterval: number = 850;
+  const minInterval: number = 600;
 
   const [time, setTime] = useState<number>(60);
 
