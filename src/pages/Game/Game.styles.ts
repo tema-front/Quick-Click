@@ -14,7 +14,7 @@ export const GameWrapper = styled(Stack)`
 `;
 
 export const GameFieldWrapper = styled(Stack)`
-  padding: 4%;
+  padding: 6%;
   border: 6px dotted #d32f2f;
   border-radius: 32px;
   height: 100%;

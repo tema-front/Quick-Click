@@ -113,8 +113,8 @@ export const Game: FC<IGameProps> = ({ totalHearts, totalMinutes, onFinishGame }
 
     if (!isGameStarted) randomElement = fieldElements[0];
 
-    const randomVerticalPos = Math.floor(Math.random() * 101);
-    const randomHorizontalPos = Math.floor(Math.random() * 101);
+    const randomVerticalPos = Math.floor(Math.random() * 91);
+    const randomHorizontalPos = Math.floor(Math.random() * 85);
     const randomRotation = Math.floor(Math.random() * (15 - -15 + 1)) - 15;
     const randomScale = Math.random() * (1.3 - 0.7) + 0.7;
 
